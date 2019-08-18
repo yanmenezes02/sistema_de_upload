@@ -16,13 +16,11 @@ session_start();
         }
         ?>
         <form method="POST" action="processa.php" enctype="multipart/form-data">
-            <label>Nome:</label>
-            <input type="text" name="nome" placeholder="Digitar o nome"><br><br>
-            
             <label>Imagem</label>
             <input type="file" name="imagem"><br><br>
             
             <input name="enviar" type="submit" value="Cadastrar">
         </form>
+        <a href="mostra.php">mostrar as fotos</a>
     </body>
 </html>

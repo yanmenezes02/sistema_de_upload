@@ -1,9 +1,20 @@
 <?php
 
 //Credenciais de acesso ao BD
-define('HOST', 'localhost');
-define('USER', 'root');
-define('PASS', '');
-define('DBNAME', 'upload');
+function conectar(){
+	try{
+		$pdo = new PDO("mysql:host=localhost;dbname=upload", "root", "");
+	}catch(PDOException $e){
+		echo "FATAL: ". $e->getMessage();
+	}
+	return $pdo;
 
-$conn = new PDO('mysql:host=' . HOST . ';dbname=' . DBNAME . ';', USER, PASS);
+	/*function conectar(){
+		try{
+			$pdo = new PDO("mysql:host=localhost;dbname=livro","root", "");
+		}catch(PDOException $e){
+			echo "Conexão não foi feita corretamente: " . $e->getMessage(); 
+		}
+		return $pdo;
+	}*/
+}
