@@ -11,6 +11,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>upload</title>
         <link rel="stylesheet" type="text/css" href="<?php echo CSS_BTS . "bootstrap.min.css";?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo CSS_URL . "style.css";?>">
     </head>
     <body>
             <?php
@@ -19,17 +20,21 @@ session_start();
                     unset($_SESSION['msg']);
                 }
             ?>
-        <div class="container">  
-        <h1>Cadastrar Imagem</h1>
-            <form method="POST" action="<?php echo BASE_URL . 'config/processa.php'?>" enctype="multipart/form-data" class="form form-horizontal">
-                <div class="form-group">
-                    <label for="enviar">Imagem</label>
-                    <input type="file" name="imagem" class="form-control-file form-control-sm">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col">
+                    <h1>Cadastrar Imagem</h1>
+                    <form method="POST" action="<?php echo BASE_URL . 'config/processa.php'?>" enctype="multipart/form-data" class="form form-horizontal">
+                        <div class="form-group">
+                             <label for="enviar">Imagem</label>
+                            <input type="file" name="imagem" class="form-control-file form-control-sm">
+                        </div>
+                        <button type="submit" class="btn btn-outline-dark mb-2 btn-sm">Enviar Imagem</button>
+                    </form>
+                    <button type="button"><a href="mostra.php">Mostrar imagens</a></button>
                 </div>
-                <button type="submit" class="btn btn-outline-primary mb-2 btn-sm">Enviar Imagem</button>
-            </form>
+            </div>
         </div>  
-        <a href="mostra.php">mostrar as fotos</a>
     </body>
     <script src="<?php echo JS_BTS . "bootstrap.min.js";?>"></script>
     <script src="<?php echo VENDOR_BTS . "jquery-1.9.1.min.js";?>"></script>
