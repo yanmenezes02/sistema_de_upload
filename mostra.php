@@ -1,13 +1,7 @@
 <?php
-	include('conexao.php');
-
-	$pdo = conectar();
-
-	$seleciona = $pdo->prepare('SELECT * FROM usuarios');
-	$seleciona->execute();
-	$mostra = $seleciona->fetch(PDO::FETCH_ASSOC);
-
-		
+	include('config/buscar.php');	
+	$selecionar = selecionar();
+	$seleciona = $selecionar->fetch(PDO::FETCH_ASSOC);
 ?>
 
 	<!DOCTYPE html>
@@ -18,7 +12,9 @@
 </head>
 <body>
 	<?php do{ ?>
-		<img src="imagens/<?php echo $mostra['imagem'];?>" alt=""> 
-	<?php } while($mostra = $seleciona->fetch(PDO::FETCH_ASSOC));?>
+		<img src="imagens/<?php echo $seleciona['imagem'];?>" alt=""> 
+
+	<?php } while($seleciona = $selecionar->fetch(PDO::FETCH_ASSOC));?>
+	<a href="index.php">voltar a pagina principal</a>
 </body>
 </html>
